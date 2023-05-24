@@ -22,6 +22,23 @@ for(var i = 0; i < vetAges.length;i++){
 
 }
 let media = soma / vetAges.length;
-    console.log(media);
+    average.textContent = media;
 }
 btnAverage.addEventListener('click',mediaAge);
+
+const btnShow = document.querySelector(".btnShow");
+const idShow = document.querySelector("#show")
+
+function showView(e,i,array){
+    const li = document.createElement("li");
+    li.textContent = e;
+    idShow.insertAdjacentElement("beforeend",li);
+
+}
+
+function showAge(){
+    idShow.innerHTML = "";
+vetAges.forEach(showView);
+
+}
+btnShow.addEventListener("click",showAge);
